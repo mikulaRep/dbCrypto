@@ -11,6 +11,20 @@ impl DbManager {
         Ok(Self { conn })
     }
 
+    pub fn create_tables(&self) -> CryptoResult<()> {
+        self.conn.execute(
+            "CREATE TABLE if not exists USER (
+            id                  INTEGER PRIMARY KEY,
+            name                TEXT NOT NULL,
+            surname             TEXT NOT NULL,
+            birth               TEXT,
+        )",
+            (),
+        )?;
+
+        Ok(())
+    }
+
     pub fn conn(&self) -> &Connection {
         &self.conn
     }
