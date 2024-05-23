@@ -17,7 +17,7 @@ impl DbManager {
             id                  INTEGER PRIMARY KEY,
             name                TEXT NOT NULL,
             surname             TEXT NOT NULL,
-            birth               TEXT,
+            birth               TEXT NOT NULL
         )",
             (),
         )?;

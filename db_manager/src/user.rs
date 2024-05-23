@@ -8,16 +8,16 @@ pub struct User {
     pub id: i32,
     pub name: String,
     pub surname: String,
-    pub birth: Option<String>,
+    pub birth: String,
 }
 
 impl User {
-    pub fn new(id: Option<i32>, name: &str, surname: &str, birth: Option<&str>) -> Self {
+    pub fn new(id: Option<i32>, name: &str, surname: &str, birth: &str) -> Self {
         Self {
             id: id.unwrap_or(-1),
             name: name.to_string(),
             surname: surname.to_string(),
-            birth: birth.map(str::to_string),
+            birth: birth.to_string(),
         }
     }
 }
