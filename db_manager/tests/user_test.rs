@@ -22,7 +22,6 @@ fn add_user() -> io::Result<()> {
     let users = db.query_users().unwrap();
     assert_eq!(users, vec![]);
 
-    println!("{}", db_name);
     let _ = fs::remove_file(db_name)?;
     Ok(())
 }
